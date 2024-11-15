@@ -70,7 +70,7 @@ def generate_launch_description():
         name='vio_transform',
         namespace='vio_transform',
         package='px4_vslam',
-        executable='vio_transform'
+        executable='modificado_vio_transform'
     )
 
     # Isaac ROS VSLAM

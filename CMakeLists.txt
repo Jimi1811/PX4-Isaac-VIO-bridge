@@ -17,6 +17,7 @@ find_package(tf2_ros REQUIRED)
 find_package(px4_msgs REQUIRED)
 find_package(isaac_ros_visual_slam_interfaces REQUIRED)
 
+# vio_transform
 add_executable(vio_transform src/vio_transform.cpp)
 ament_target_dependencies(vio_transform rclcpp sensor_msgs nav_msgs px4_msgs tf2 tf2_ros isaac_ros_visual_slam_interfaces)
 
@@ -26,6 +27,18 @@ target_include_directories(vio_transform PUBLIC
 target_compile_features(vio_transform PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
 install(TARGETS vio_transform
+  DESTINATION lib/${PROJECT_NAME})
+
+# modificado_vio_transform
+add_executable(modificado_vio_transform src/modificado_vio_transform.cpp)
+ament_target_dependencies(modificado_vio_transform rclcpp sensor_msgs nav_msgs px4_msgs tf2 tf2_ros isaac_ros_visual_slam_interfaces)
+
+target_include_directories(modificado_vio_transform PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(modificado_vio_transform PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+install(TARGETS modificado_vio_transform
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
