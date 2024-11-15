@@ -35,7 +35,7 @@ public:
 
 		// Timer for 10 Hz
 		_timer = this->create_wall_timer(
-			std::chrono::milliseconds(100), // 10 Hz
+			std::chrono::milliseconds(30), // 10 Hz
 			std::bind(&VioTransform::timerCallback, this));
 	}
 
