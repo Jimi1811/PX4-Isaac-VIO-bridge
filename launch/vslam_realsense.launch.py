@@ -34,7 +34,8 @@ def generate_launch_description():
                 'enable_color': True,
                 'enable_depth': False,
                 'depth_module.emitter_enabled': 0,
-                'depth_module.profile': '640x360x90',
+                # 'depth_module.profile': '640x360x90', 848 x 480 x 60
+                'depth_module.profile': '848x480x60',
                 'rgb_camera.profile': '640x360x30',
                 'enable_gyro': False,
                 'enable_accel': False,
@@ -83,10 +84,14 @@ def generate_launch_description():
                     # 'denoise_input_images': False, # No esta
                     'rectified_images': True, 
                     'enable_imu_fusion': True,
-                    'gyro_noise_density': 0.001,
-                    'gyro_random_walk': 0.000019393,
-                    'accel_noise_density': 0.003,
-                    'accel_random_walk': 0.003,
+                    'gyro_noise_density': 0.008,
+                    'gyro_random_walk': 0.000098883,
+                    'accel_noise_density': 0.000981,
+                    'accel_random_walk': 0.0006169912,
+                    # 'gyro_noise_density': 0.001,
+                    # 'gyro_random_walk': 0.000019393,
+                    # 'accel_noise_density': 0.003,
+                    # 'accel_random_walk': 0.003,
                     'calibration_frequency': 100.0,
                     'image_jitter_threshold_ms': 22.00, # No habia, cambia abajo
                     # 'img_jitter_threshold_ms': 22.00,
